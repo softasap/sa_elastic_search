@@ -21,7 +21,7 @@
       state: present
       update_cache: true
 
-  - name: ElasticSearch | install 
+  - name: ElasticSearch | install
     package:
       name: elasticsearch
       state: present
@@ -39,7 +39,6 @@
     tags:
      - elasticsearch
 
-    
   - name: ElasticSearch | configure
     template:
       src: "{{ item }}.j2"
@@ -62,4 +61,3 @@
     become: yes
     tags:
      - elasticserch
-    

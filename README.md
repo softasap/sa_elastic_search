@@ -22,7 +22,10 @@ Advanced
 
 roles:
      - {
-         role: "sa_elastic_search"
+         role: "sa_elastic_search",
+         elasticsearch_family: '7.x',
+         elasticsearch_heap_size_min: 1g,
+         elasticsearch_heap_size_max: 2g
        }
 
 
