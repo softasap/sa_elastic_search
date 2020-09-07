@@ -1,0 +1,5 @@
+- src: softasap.sa_elastic_search
+  name: sa_elastic_search
+- src: softasap.sa_java_corretto
+  name: sa_java_corretto
+
