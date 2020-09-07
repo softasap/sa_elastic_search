@@ -17,7 +17,7 @@
 
   - name: ElasticSearch | apt repo
     apt_repository:
-      repo: "deb https://artifacts.elastic.co/packages/{{ elasticsearch_version }}/apt stable main"
+      repo: "deb https://artifacts.elastic.co/packages/{{ elasticsearch_family }}/apt stable main"
       state: present
       update_cache: true
 
@@ -25,9 +25,20 @@
     package:
       name: elasticsearch
       state: present
+    when: elasticsearch_version is not defined
     become: yes
     tags:
      - elasticsearch
+
+  - name: ElasticSearch | install version
+    package:
+      name: "elasticsearch={{ elasticsearch_version }}"
+      state: present
+    when: elasticsearch_version is defined
+    become: yes
+    tags:
+     - elasticsearch
+
     
   - name: ElasticSearch | configure
     template:
