@@ -1,0 +1,4 @@
+---
+# tasks file for sa_elastic_search
+
+  - include: tasks_elastic_search.yml
